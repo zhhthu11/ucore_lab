@@ -8,6 +8,7 @@
 make "V=" > make_result.txt
 ```
 make_result.txt文件可以在lab1根目录下找到。这里一系列命令非常类似的，只有两种类型。下面用典型例子详细解释这两类命令：
+
 (类型 1)
 ```
 + cc kern/init/init.c
@@ -38,7 +39,7 @@ ld -m    elf_i386 -nostdlib -T tools/kernel.ld -o bin/kernel  obj/kern/init/init
 
 以此对照make_result.txt中的命令，即一步步生成ucore.img
 
-2. 一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？
+2.一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？
 在主引导扇区的读取代码在`tools/sign.c`中可以发现，一个磁盘主引导扇区只有512字节，且第510个字节是0x55， 第511个字节是0xAA。所以符合规范的特征为不超过512字节，且0x55AA结束。
 
 

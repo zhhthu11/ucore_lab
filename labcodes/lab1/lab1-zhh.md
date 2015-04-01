@@ -4,7 +4,7 @@
 1.操作系统镜像文件ucore.img是如何一步一步生成的？(需要比较详细地解释Makefile中每一条相关命令和命令参数的含义，以及说明命令导致的结果)
 在labcodes/lab1目录下运行make "V=" > make_result.txt，查看makes真正执行的命令。
 
-'''
+```
 + cc kern/init/init.c
 gcc -Ikern/init/ -fno-builtin -Wall -ggdb -m32 -gstabs -nostdinc  -fno-stack-protector -Ilibs/ -Ikern/debug/ -Ikern/driver/ -Ikern/trap/ -Ikern/mm/ -c kern/init/init.c -o obj/kern/init/init.o
 + cc kern/libs/readline.c
@@ -53,4 +53,4 @@ build 512 bytes boot sector: 'bin/bootblock' success!
 dd if=/dev/zero of=bin/ucore.img count=10000
 dd if=bin/bootblock of=bin/ucore.img conv=notrunc
 dd if=bin/kernel of=bin/ucore.img seek=1 conv=notrunc
-'''
+```

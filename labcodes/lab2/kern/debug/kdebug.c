@@ -307,7 +307,8 @@ print_stackframe(void) {
       */
       uint32_t ebp = read_ebp();
       uint32_t eip = read_eip();
-      for (int i = 0; i < STACKFRAME_DEPTH; i++)
+      int i;
+      for (i = 0; i < STACKFRAME_DEPTH; i++)
       {
             if (ebp == 0) break;
             cprintf("ebp:0x%08x eip:0x%08x ", ebp, eip);

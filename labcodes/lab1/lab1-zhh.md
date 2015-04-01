@@ -1,4 +1,4 @@
-# Lab1 erport, Honghui Zhang, 2011011237
+# Lab1 Rerport, 2011011237
 
 ##练习1：理解通过make生成执行文件的过程
 1.操作系统镜像文件ucore.img是如何一步一步生成的？

@@ -40,6 +40,7 @@ ld -m    elf_i386 -nostdlib -T tools/kernel.ld -o bin/kernel  obj/kern/init/init
 以此对照make_result.txt中的命令，即一步步生成ucore.img
 
 2.一个被系统认为是符合规范的硬盘主引导扇区的特征是什么？
+
 在主引导扇区的读取代码在`tools/sign.c`中可以发现，一个磁盘主引导扇区只有512字节，且第510个字节是0x55， 第511个字节是0xAA。所以符合规范的特征为不超过512字节，且0x55AA结束。
 
 

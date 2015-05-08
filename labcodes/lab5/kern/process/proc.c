@@ -114,10 +114,10 @@ alloc_proc(void) {
         proc->runs = 0;
         proc->kstack = 0;
         proc->need_resched = 0;
-        proc->parent = 0;
-        proc->mm = 0;
+        proc->parent = NULL;
+        proc->mm = NULL;
         memset(&(proc->context), 0, sizeof(struct context));
-        proc->tf = 0;
+        proc->tf = NULL;
         proc->cr3 = boot_cr3;
         proc->flags = 0;
         memset(proc->name, 0, PROC_NAME_LEN);

@@ -9,12 +9,12 @@
 
  - 请在实验报告中给出内核级信号量的设计描述，并说其大致执行流流程。
    - ucore中的内核级信号量在sem.h中给出了定义
-   ```
-   typedef struct {
+    ```
+    typedef struct {
       int value;
       wait_queue_t wait_queue;
-   } semaphore_t;
-   ```
+    } semaphore_t;
+    ```
     - 其中value是信号量，表示剩余资源数；wait_queue是对应的等待队列。
 
   - 阐述大致执行流程
@@ -37,13 +37,13 @@
 
  - 请在实验报告中给出内核级条件变量的设计描述，并说其大致执行流流程。
   - ucore中的内核级条件变量定义如下
-  ```
-  typedef struct condvar{
-    semaphore_t sem;
-    int count;
-    monitor_t * owner; // the owner(monitor) of this condvar
-  } condvar_t;
-  ```
+   ```
+   typedef struct condvar{
+     semaphore_t sem;
+     int count;
+     monitor_t * owner; // the owner(monitor) of this condvar
+   } condvar_t;
+   ```
     - 其中sem为信号量及相应等待队列，count为在该条件变量上等待的进程数，owner位该条件变量的管程
 
   - 阐述大致执行流程
